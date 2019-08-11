@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 
 const Navbar = (props) => {
   const [darkMode, setDarkMode] = useDarkMode();
 
+  useEffect(()=>{
+    props.lineColor(darkMode);
+  },[darkMode]);
+
   const toggleMode = e => {
     e.preventDefault();
-    props.lineColor(!darkMode);
+    // props.lineColor(!darkMode);
     setDarkMode(!darkMode);
   };
   return (

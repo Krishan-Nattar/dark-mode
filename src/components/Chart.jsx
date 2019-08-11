@@ -28,8 +28,8 @@ const Chart = (props) => {
 
   return (
     <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke={props.color} />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <Line type="monotone" dataKey="value" stroke={props.line} />
+      <CartesianGrid stroke={props.graph} strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
       <Tooltip />

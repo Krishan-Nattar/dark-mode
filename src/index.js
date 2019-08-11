@@ -10,9 +10,11 @@ import "./styles.scss";
 const App = () => {
   const [coinData, setCoinData] = useState([]);
   const [line, setLine] = useState("#8884d8")
+  const [graph, setGraph] = useState("#ccc")
 
   function lineColor(bool){
     bool ? setLine("yellow") : setLine("#8884d8");
+    bool ? setGraph("pink") : setGraph("#ccc");
   }
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <Navbar lineColor={lineColor} />
-      <Charts coinData={coinData} color={line}/>
+      <Charts coinData={coinData} line={line} graph={graph} />
     </div>
   );
 };
