@@ -3,6 +3,7 @@ import Chart from "./Chart";
 
 const Charts = (props ) => {
   // console.log(props.color);
+  // console.log(props.coinData);
   return (
     <div className="charts">
       {props.coinData.map(coin => (
