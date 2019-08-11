@@ -13,8 +13,8 @@ const App = () => {
   const [graph, setGraph] = useState("#ccc")
 
   function lineColor(bool){
-    bool ? setLine("yellow") : setLine("#8884d8");
-    bool ? setGraph("pink") : setGraph("#ccc");
+    bool ? setLine("lightblue") : setLine("#8884d8");
+    bool ? setGraph("purple") : setGraph("#ccc");
   }
 
   useEffect(() => {
