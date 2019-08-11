@@ -9,6 +9,11 @@ import "./styles.scss";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
+  const [line, setLine] = useState("#8884d8")
+
+  function lineColor(bool){
+    bool ? setLine("yellow") : setLine("#8884d8");
+  }
 
   useEffect(() => {
     axios
@@ -20,8 +25,8 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <Navbar />
-      <Charts coinData={coinData} />
+      <Navbar lineColor={lineColor} />
+      <Charts coinData={coinData} color={line}/>
     </div>
   );
 };
