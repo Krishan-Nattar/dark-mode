@@ -16,6 +16,8 @@ const Navbar = (props) => {
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
+      <button onClick={()=>props.previousPage()}>Previous Page</button>
+      <button onClick={()=>props.nextPage()}>Next Page</button>
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}

@@ -32,7 +32,7 @@ const Chart = (props) => {
       <CartesianGrid stroke={props.graph} strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
-      <Tooltip />
+      <Tooltip stroke={props.graph} />
     </LineChart>
   );
 };
