@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
+import {Button} from 'semantic-ui-react';
 
 const Navbar = (props) => {
   const [darkMode, setDarkMode] = useDarkMode();
@@ -16,8 +17,8 @@ const Navbar = (props) => {
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
-      <button onClick={()=>props.previousPage()}>Previous Page</button>
-      <button onClick={()=>props.nextPage()}>Next Page</button>
+      <Button onClick={()=>props.previousPage()}>Previous Page</Button>
+      <Button onClick={()=>props.nextPage()}>Next Page</Button>
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}

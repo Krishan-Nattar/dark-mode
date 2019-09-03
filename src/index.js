@@ -26,7 +26,7 @@ const App = () => {
   function lineColor(bool){
     bool ? setLine("lightblue") : setLine("#8884d8");
     
-    bool ? setGraph("purple") : setGraph("#ccc");
+    bool ? setGraph("red") : setGraph("#ccc");
   }
 
   useEffect(() => {
