@@ -9,8 +9,8 @@ import {
   Tooltip
 } from "recharts";
 
-const Chart = ({ sparklineData }) => {
-  const formattedData = sparklineData
+const Chart = (props) => {
+  const formattedData = props.sparklineData
     .map((price, idx) => {
       if (idx % 6 === 0) {
         const timeToSubtract = 168 - idx;
@@ -18,7 +18,7 @@ const Chart = ({ sparklineData }) => {
           .subtract(timeToSubtract, "hours")
           .format("ddd h:mma");
         return { value: price, date };
-      } else if (idx === sparklineData.length - 1) {
+      } else if (idx === props.sparklineData.length - 1) {
         const date = moment().format("ddd h:mma");
         return { value: price, date };
       }
@@ -28,11 +28,11 @@ const Chart = ({ sparklineData }) => {
 
   return (
     <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <Line type="monotone" dataKey="value" stroke={props.line} />
+      <CartesianGrid stroke={props.graph} strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
-      <Tooltip />
+      <Tooltip stroke={props.graph} />
     </LineChart>
   );
 };
